@@ -35,9 +35,6 @@ public void onEnable() {
 Please check [the wiki](https://github.com/KennethWussmann/Levitate/wiki) to get started!
 
 #Planned features
-* ~~HelpMap with detailed Command-List~~ Added in [v1.1.0](https://github.com/KennethWussmann/Levitate/releases/tag/v1.1.0)
-* ~~Commands with undefined amount of arguments~~ Added in [v1.3.0](https://github.com/KennethWussmann/Levitate/releases/tag/v1.3.0)
-* ~~TabComplete~~ Added in [v1.2.0](https://github.com/KennethWussmann/Levitate/releases/tag/v1.2.0)
 * Let me know your ideas :smile:
 
 #License
