@@ -199,11 +199,11 @@ public class CommandInformation {
 			try {
 				exArg = this.args.get(i);
 			} catch (IndexOutOfBoundsException e) {
-				if(unlimitedArg == null) {
-				} else {
+				if(unlimitedArg != null) {
 					exArg = unlimitedArg;
 				}
 			}
+			if(exArg == null) return false;
 			if(exArg.isUnlimited()) {
 				unlimitedArg = (Argument) exArg.clone();
 			}

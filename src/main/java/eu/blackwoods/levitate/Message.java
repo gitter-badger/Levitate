@@ -1,8 +1,12 @@
 package eu.blackwoods.levitate;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 
 import org.bukkit.ChatColor;
+import org.bukkit.configuration.InvalidConfigurationException;
+import org.bukkit.configuration.file.YamlConfiguration;
 
 
 public enum Message {
@@ -56,8 +60,8 @@ public enum Message {
 	URLSYNTAX_URL_MALFORMED("The argument \"%arg%\" has to be an URL!"),
 	URLSYNTAX_DOES_NOT_START_WITH("The url \"%arg%\" has to start with \"%parameter%\"!");
 	
-	
-	String message;
+	private static YamlConfiguration config;
+	private String message;
 	
 	Message(String message) {
 		this.message = message;
@@ -65,13 +69,14 @@ public enum Message {
 	
 	public String get(TextMode mode) {
 		String raw = message;
+		if(config != null) {
+			if(config.getString("levitate." + values()[ordinal()].toString()) != null) raw = config.getString("levitate." + values()[ordinal()].toString());
+		}
 		switch(mode) {
 		case COLOR:
 			return ChatColor.translateAlternateColorCodes('&', raw);
 		case PLAIN:
 			return ChatColor.stripColor(ChatColor.translateAlternateColorCodes('&', raw));
-		case RAW:
-			return raw;
 		}
 		return raw;
 	}
@@ -83,7 +88,26 @@ public enum Message {
 		return message;
 	}
 	
+	/**
+	 * Load a YAML-Configuration as Message-Source
+	 * @param file Path to .yml file
+	 */
+	public static void loadConfig(File file) {
+		config = new YamlConfiguration();
+		try {
+			config.load(file);
+			for(Message message : values()) {
+				config.addDefault("levitate." + message.toString(), message.get(TextMode.RAW));
+			}
+			config.options().copyDefaults(true);
+			config.save(file);
+		} catch (IOException | InvalidConfigurationException e) {
+			e.printStackTrace();
+		}
+	}
+
 	public enum TextMode {
 		RAW, PLAIN, COLOR
 	}
+	
 }

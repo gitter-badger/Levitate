@@ -1,5 +1,9 @@
 package eu.blackwoods.levitate;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Levitate {
@@ -7,13 +11,40 @@ public class Levitate {
 	private JavaPlugin plugin;
 	private CommandRegistry registry;
 	private SyntaxValidations syntaxes;
-	
+
 	public Levitate(JavaPlugin plugin) {
 		this.plugin = plugin;
 		SyntaxValidations.registerDefaultSyntax(plugin);
 		registry = new CommandRegistry(plugin);
 		registry.registerBukkitPermissionHandler();
 		registry.registerDefaultHelpMap();
+	}
+
+	public Levitate(JavaPlugin plugin, boolean createYAML) {
+		this.plugin = plugin;
+		SyntaxValidations.registerDefaultSyntax(plugin);
+		registry = new CommandRegistry(plugin);
+		registry.registerBukkitPermissionHandler();
+		registry.registerDefaultHelpMap();
+		if(createYAML) {
+			File pluginFolder = plugin.getDataFolder();
+			File config = new File(pluginFolder, "messages.yml");
+			if(!pluginFolder.exists()) pluginFolder.mkdirs();
+			if(!config.exists()) {
+				InputStream jarURL = Levitate.class.getResourceAsStream("/messages.yml");
+				try {
+					if(jarURL == null) {
+						config.createNewFile();
+					} else {
+						copyFile(jarURL, config);
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				
+			}
+			Message.loadConfig(config);
+		}
 	}
 
 	public JavaPlugin getPlugin() {
@@ -84,11 +115,45 @@ public class Levitate {
 	}
 	
 	/**
-	 * Register own HelpMaoo
+	 * Register own HelpMap
 	 * @param helpMap Handles the help-message
 	 */
 	public void registerHelpMap(HelpMap helpMap) {
 		getRegistry().registerHelpMap(helpMap);
 	}
 	
+	public SyntaxValidations getSyntaxes() {
+		return syntaxes;
+	}
+
+	public void setSyntaxes(SyntaxValidations syntaxes) {
+		this.syntaxes = syntaxes;
+	}
+	
+	/**
+	 * Copy InputStream to output file
+	 * @param in
+	 * @param out
+	 * @throws Exception
+	 */
+	private static void copyFile(InputStream in, File out) throws Exception {
+        InputStream fis = in;
+        FileOutputStream fos = new FileOutputStream(out);
+        try {
+            byte[] buf = new byte[1024];
+            int i = 0;
+            while ((i = fis.read(buf)) != -1) {
+                fos.write(buf, 0, i);
+            }
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            if (fis != null) {
+                fis.close();
+            }
+            if (fos != null) {
+                fos.close();
+            }
+        }
+    }
 }
