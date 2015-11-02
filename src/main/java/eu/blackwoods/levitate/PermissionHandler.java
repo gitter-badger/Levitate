@@ -1,5 +1,7 @@
 package eu.blackwoods.levitate;
 
+import org.bukkit.command.CommandSender;
+
 
 public interface PermissionHandler {
 	
@@ -9,6 +11,6 @@ public interface PermissionHandler {
 	 * @param permission The permission
 	 * @return Return true if the sender has permission
 	 */
-	public boolean hasPermission(Object sender, String permission);
+	public boolean hasPermission(CommandSender sender, String permission);
 	
 }

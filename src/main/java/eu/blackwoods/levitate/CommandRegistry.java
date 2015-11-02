@@ -210,9 +210,9 @@ public class CommandRegistry {
 		permissionHandler = new PermissionHandler() {
 			
 			@Override
-			public boolean hasPermission(Object sender, String permission) {
+			public boolean hasPermission(CommandSender sender, String permission) {
 				if(sender instanceof CommandSender) {
-					if(!((CommandSender)sender).hasPermission(permission)) return false;
+					if(!sender.hasPermission(permission)) return false;
 				}
 				return true;
 			}
