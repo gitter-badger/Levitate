@@ -28,7 +28,7 @@ import eu.blackwoods.levitate.syntax.WorldSyntax;
 
 public class SyntaxValidations {
 	
-	public static HashMap<String, SyntaxHandler> syntaxes = new HashMap<String, SyntaxHandler>();
+	private static HashMap<String, SyntaxHandler> syntaxes = new HashMap<String, SyntaxHandler>();
 	
 	/**
 	 * Register default syntaxes to create your command
@@ -61,12 +61,6 @@ public class SyntaxValidations {
 		syntaxes.put(method, handler);
 	}
 	
-	public static boolean existHandler(String method) {
-		for(String m : syntaxes.keySet()) 
-			if(m.equalsIgnoreCase(method)) return true;
-		return false;
-	}
-	
 	public static Iterable<MatchResult> allMatches(final Pattern p, final CharSequence input) {
 		return new Iterable<MatchResult>() {
 			public Iterator<MatchResult> iterator() {
@@ -96,6 +90,23 @@ public class SyntaxValidations {
 				};
 			}
 		};
+	}
+		
+	public static boolean existHandler(String method) {
+		for(String m : syntaxes.keySet()) 
+			if(m.equalsIgnoreCase(method)) return true;
+		return false;
+	}
+	
+	public static HashMap<String, SyntaxHandler> getSyntaxes() {
+		return syntaxes;
+	}
+
+	/**
+	 * Remove all syntaxes
+	 */
+	public static void clearSyntaxes() {
+		syntaxes.clear();
 	}
 	
 }

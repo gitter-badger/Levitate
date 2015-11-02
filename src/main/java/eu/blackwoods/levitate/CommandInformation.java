@@ -97,13 +97,13 @@ public class CommandInformation {
 				replaces.put("%method%", method);
 				throw new CommandSyntaxException(Message.CI_NO_SYNTAX.get(TextMode.COLOR, replaces));
 			}
-			this.args.add(new Argument(method, parseArgument(arg).get(1), SyntaxValidations.syntaxes.get(method), unlimited));
+			this.args.add(new Argument(method, parseArgument(arg).get(1), SyntaxValidations.getSyntaxes().get(method), unlimited));
 		}
 	}
 	
 	public boolean matchArgument(String input, String syntaxArg) throws CommandSyntaxException {
 		List<String> i = parseArgument(syntaxArg);
-		for(SyntaxHandler h : SyntaxValidations.syntaxes.values()) {
+		for(SyntaxHandler h : SyntaxValidations.getSyntaxes().values()) {
 			try {
 				h.check(i.get(1), input);
 				return true;
