@@ -30,6 +30,7 @@ public void onEnable() {
 * TabComplete
 * Undefined amount of arguments
 * Extendable
+* Test
 
 #Getting started
 Please check [the wiki](https://github.com/KennethWussmann/Levitate/wiki) to get started!
