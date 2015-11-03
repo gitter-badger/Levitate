@@ -37,6 +37,7 @@ Please check [the wiki](https://github.com/KennethWussmann/Levitate/wiki) to get
 #Download
 You can get the lastest Levitate-Artifact at:
 * [GitHub Releases](https://github.com/KennethWussmann/Levitate/releases/latest) (Only Java-8)
+* [Maven](https://github.com/KennethWussmann/Levitate/wiki/1.-Getting-started#maven) (Only Java-8)
 * [Jenkins Java-8](http://ci.ketrwu.de/job/Levitate-Java-8/lastSuccessfulBuild/)
 * [Jenkins Java-7](http://ci.ketrwu.de/job/Levitate-Java-7/lastSuccessfulBuild/)
 
