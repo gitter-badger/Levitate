@@ -34,6 +34,12 @@ public void onEnable() {
 #Getting started
 Please check [the wiki](https://github.com/KennethWussmann/Levitate/wiki) to get started!
 
+#Download
+You can get the lastest Levitate-Artifact at:
+* [GitHub Releases](https://github.com/KennethWussmann/Levitate/releases/latest) (Only Java-8)
+* [Jenkins Java-8](http://ci.ketrwu.de/job/Levitate-Java-8/lastSuccessfulBuild/)
+* [Jenkins Java-7](http://ci.ketrwu.de/job/Levitate-Java-7/lastSuccessfulBuild/)
+
 #Planned features
 * Let me know your ideas :smile:
 
