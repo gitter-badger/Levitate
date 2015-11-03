@@ -102,6 +102,6 @@
             </configuration>
          </plugin>
       </plugins>
-      <finalName>${project.name}-${project.version}-${timestamp}</finalName>
+      <finalName>${project.name}-${project.version}</finalName>
    </build>
 </project>
