@@ -21,7 +21,7 @@ public void onEnable() {
 ```
 
 #Features
-* Checks arguments to be vaild
+* Checks arguments to be valid
 * Checks permission
 * Registers command directly to Bukkit/Spigot without plugin.yml
 * Supports command aliases
