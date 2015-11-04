@@ -6,12 +6,21 @@ import java.io.InputStream;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+/**
+ * Bundles everything you need to use Levitate.
+ * Read <a href="https://github.com/KennethWussmann/Levitate/wiki/2.-First-command">this page</a> to create your first Levitate-Command.
+ * @author Kenneth Wussmann
+ */
 public class Levitate {
 	
 	private JavaPlugin plugin;
 	private CommandRegistry registry;
-	private SyntaxValidations syntaxes;
 
+	/**
+	 * Bundles everything you need to use Levitate.
+	 * Read <a href="https://github.com/KennethWussmann/Levitate/wiki/2.-First-command">this page</a> to create your first Levitate-Command.
+	 * @param plugin Your plugin instance
+	 */
 	public Levitate(JavaPlugin plugin) {
 		this.plugin = plugin;
 		SyntaxValidations.registerDefaultSyntax(plugin);
@@ -20,6 +29,14 @@ public class Levitate {
 		registry.registerDefaultHelpMap();
 	}
 
+	/**
+	 * Bundles everything you need to use Levitate. 
+	 * Pass <b>true</b> to create a <i>messages.yml</i>.
+	 * Read more about the <i>messages.yml</i> <a href="https://github.com/KennethWussmann/Levitate/wiki/5.-Modify-messages">here</a>.
+	 * Read <a href="https://github.com/KennethWussmann/Levitate/wiki/2.-First-command">this page</a> to create your first Levitate-Command.
+	 * @param plugin
+	 * @param createYAML
+	 */
 	public Levitate(JavaPlugin plugin, boolean createYAML) {
 		this.plugin = plugin;
 		SyntaxValidations.registerDefaultSyntax(plugin);
@@ -47,28 +64,20 @@ public class Levitate {
 		}
 	}
 
+	/**
+	 * Get instance of JavaPlugin used to create Levitate-Instance
+	 * @return
+	 */
 	public JavaPlugin getPlugin() {
 		return plugin;
 	}
 
-	public void setPlugin(JavaPlugin plugin) {
-		this.plugin = plugin;
-	}
-
-	public CommandRegistry getRegistry() {
+	/**
+	 * Get instance of CommandRegistry which holds your Levitate-Commands
+	 * @return
+	 */
+	public CommandRegistry getCommandRegistry() {
 		return registry;
-	}
-
-	public void setRegistry(CommandRegistry registry) {
-		this.registry = registry;
-	}
-
-	public SyntaxValidations getSyntaxValidations() {
-		return syntaxes;
-	}
-
-	public void setSyntaxValidations(SyntaxValidations syntaxes) {
-		this.syntaxes = syntaxes;
 	}
 
 	/**
@@ -78,7 +87,7 @@ public class Levitate {
 	 * @param handler The CommandHandler which handels the execution of the command
 	 */
 	public void register(CommandInformation info, String[] aliases, CommandHandler handler) {
-		getRegistry().register(info, aliases, handler);
+		getCommandRegistry().register(info, aliases, handler);
 	}
 	
 	/**
@@ -87,7 +96,7 @@ public class Levitate {
 	 * @param handler The CommandHandler which handels the execution of the command
 	 */
 	public void register(CommandInformation info, CommandHandler handler) {
-		getRegistry().register(info, handler);
+		getCommandRegistry().register(info, handler);
 	}
 	
 	/**
@@ -104,14 +113,14 @@ public class Levitate {
 	 * @param permissionHandler PermissionHandler wich checks whether the sender has permission to execute the command
 	 */
 	public void registerPermissionHandler(PermissionHandler permissionHandler) {
-		getRegistry().setPermissionHandler(permissionHandler);
+		getCommandRegistry().setPermissionHandler(permissionHandler);
 	}
 	
 	/**
 	 * Register default HelpMap
 	 */
 	public void registerDefaultHelpMap() {
-		getRegistry().registerDefaultHelpMap();
+		getCommandRegistry().registerDefaultHelpMap();
 	}
 	
 	/**
@@ -119,15 +128,7 @@ public class Levitate {
 	 * @param helpMap Handles the help-message
 	 */
 	public void registerHelpMap(HelpMap helpMap) {
-		getRegistry().registerHelpMap(helpMap);
-	}
-	
-	public SyntaxValidations getSyntaxes() {
-		return syntaxes;
-	}
-
-	public void setSyntaxes(SyntaxValidations syntaxes) {
-		this.syntaxes = syntaxes;
+		getCommandRegistry().registerHelpMap(helpMap);
 	}
 	
 	/**
@@ -136,7 +137,7 @@ public class Levitate {
 	 * @param out
 	 * @throws Exception
 	 */
-	private static void copyFile(InputStream in, File out) throws Exception {
+	private void copyFile(InputStream in, File out) throws Exception {
         InputStream fis = in;
         FileOutputStream fos = new FileOutputStream(out);
         try {

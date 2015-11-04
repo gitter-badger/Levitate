@@ -9,6 +9,10 @@ import eu.blackwoods.levitate.Message.TextMode;
 import eu.blackwoods.levitate.SyntaxHandler;
 import eu.blackwoods.levitate.exception.SyntaxResponseException;
 
+/**
+ * Checks if user-input is something like a boolean
+ * @author Kenneth Wussmann
+ */
 public class BooleanSyntax implements SyntaxHandler {
 	
 	private List<String> values = new ArrayList<String>();

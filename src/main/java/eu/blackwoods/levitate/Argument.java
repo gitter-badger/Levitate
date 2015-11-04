@@ -1,5 +1,9 @@
 package eu.blackwoods.levitate;
 
+/**
+ * Internal class to handel arguments
+ * @author Kenneth Wussmann
+ */
 public class Argument implements Cloneable {
 
 	private String method;

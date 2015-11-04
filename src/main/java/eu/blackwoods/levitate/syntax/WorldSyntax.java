@@ -8,10 +8,14 @@ import org.bukkit.Bukkit;
 import org.bukkit.World;
 
 import eu.blackwoods.levitate.Message;
-import eu.blackwoods.levitate.SyntaxHandler;
 import eu.blackwoods.levitate.Message.TextMode;
+import eu.blackwoods.levitate.SyntaxHandler;
 import eu.blackwoods.levitate.exception.SyntaxResponseException;
 
+/**
+ * Checks if user-input is a worldname
+ * @author Kenneth Wussmann
+ */
 public class WorldSyntax implements SyntaxHandler {
 
 	@Override

@@ -8,6 +8,10 @@ import eu.blackwoods.levitate.Message.TextMode;
 import eu.blackwoods.levitate.SyntaxHandler;
 import eu.blackwoods.levitate.exception.SyntaxResponseException;
 
+/**
+ * Checks if user-input is a string
+ * @author Kenneth Wussmann
+ */
 public class StringSyntax implements SyntaxHandler {
 
 	@Override

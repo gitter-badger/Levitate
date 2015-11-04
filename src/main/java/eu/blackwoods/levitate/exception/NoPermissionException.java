@@ -1,5 +1,9 @@
 package eu.blackwoods.levitate.exception;
 
+/**
+ * Throws when user doesn't has permission to execute the command
+ * @author Kenneth Wussmann
+ */
 public class NoPermissionException extends Exception {
 	public NoPermissionException() {
 		super();

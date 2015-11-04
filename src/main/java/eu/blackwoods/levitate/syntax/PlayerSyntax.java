@@ -14,6 +14,10 @@ import eu.blackwoods.levitate.SyntaxHandler;
 import eu.blackwoods.levitate.exception.CommandSyntaxException;
 import eu.blackwoods.levitate.exception.SyntaxResponseException;
 
+/**
+ * Checks if user-input is a playername
+ * @author Kenneth Wussmann
+ */
 public class PlayerSyntax implements SyntaxHandler {
 
 	@Override

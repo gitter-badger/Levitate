@@ -9,6 +9,10 @@ import eu.blackwoods.levitate.SyntaxHandler;
 import eu.blackwoods.levitate.exception.CommandSyntaxException;
 import eu.blackwoods.levitate.exception.SyntaxResponseException;
 
+/**
+ * Checks if user-input is a double
+ * @author Kenneth Wussmann
+ */
 public class DoubleSyntax implements SyntaxHandler {
 
 	@Override

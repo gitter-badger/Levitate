@@ -22,6 +22,10 @@ import eu.blackwoods.levitate.exception.ExecutorIncompatibleException;
 import eu.blackwoods.levitate.exception.NoPermissionException;
 import eu.blackwoods.levitate.exception.SyntaxResponseException;
 
+/**
+ * Handles Levitate-Commands
+ * @author Kenneth Wussmann
+ */
 public class CommandRegistry {
 	
 	private HashMap<CommandInformation, CommandHandler> commands = new HashMap<CommandInformation, CommandHandler>();

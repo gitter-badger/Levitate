@@ -8,6 +8,10 @@ import org.bukkit.entity.Player;
 import eu.blackwoods.levitate.CommandInformation.CommandExecutor;
 import eu.blackwoods.levitate.Message.TextMode;
 
+/**
+ * Default Levitate-HelpMap
+ * @author Kenneth Wussmann
+ */
 public class DefaultHelpMap implements HelpMap {
 	
 	CommandRegistry registry = null;

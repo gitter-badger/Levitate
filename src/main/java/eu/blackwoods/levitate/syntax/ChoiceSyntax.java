@@ -12,6 +12,10 @@ import eu.blackwoods.levitate.SyntaxHandler;
 import eu.blackwoods.levitate.exception.CommandSyntaxException;
 import eu.blackwoods.levitate.exception.SyntaxResponseException;
 
+/**
+ * Checks if user-input is in choice list. Case-sensitive
+ * @author Kenneth Wussmann
+ */
 public class ChoiceSyntax implements SyntaxHandler {
 
 	@Override

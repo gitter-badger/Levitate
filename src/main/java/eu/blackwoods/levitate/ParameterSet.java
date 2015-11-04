@@ -14,9 +14,13 @@ import org.bukkit.inventory.ItemStack;
 
 import eu.blackwoods.levitate.syntax.ItemStackSyntax;
 
+/**
+ * Holds parameters and casts them to the right data type or class
+ * @author Kenneth Wussmann
+ */
 public class ParameterSet {
 	
-	List<String> parameter = new ArrayList<String>();
+	private List<String> parameter = new ArrayList<String>();
 	
 	/**
 	 * The collection of parameters
@@ -193,7 +197,11 @@ public class ParameterSet {
 		return (Object) parameter.get(i);
 	}
 	
-	
+	/**
+	 * Checks if string is an integer
+	 * @param val 
+	 * @return
+	 */
 	private boolean isInt(String val) {
 		try {
 			Integer.parseInt(val);

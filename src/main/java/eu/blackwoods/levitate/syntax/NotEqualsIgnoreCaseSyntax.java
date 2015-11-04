@@ -8,6 +8,10 @@ import eu.blackwoods.levitate.Message.TextMode;
 import eu.blackwoods.levitate.SyntaxHandler;
 import eu.blackwoods.levitate.exception.SyntaxResponseException;
 
+/**
+ * Checks if user-input is not string. Case-insensitive.
+ * @author Kenneth Wussmann
+ */
 public class NotEqualsIgnoreCaseSyntax implements SyntaxHandler {
 
 	@Override

@@ -12,6 +12,10 @@ import eu.blackwoods.levitate.exception.CommandSyntaxException;
 import eu.blackwoods.levitate.exception.ExecutorIncompatibleException;
 import eu.blackwoods.levitate.exception.SyntaxResponseException;
 
+/**
+ * Holds syntax of Levitate-Command
+ * @author Kenneth Wussmann
+ */
 public class CommandInformation {
 
 	private String syntax;

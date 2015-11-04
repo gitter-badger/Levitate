@@ -18,6 +18,10 @@ import eu.blackwoods.levitate.Message.TextMode;
 import eu.blackwoods.levitate.SyntaxHandler;
 import eu.blackwoods.levitate.exception.SyntaxResponseException;
 
+/**
+ * Checks if user-input is an itemname or id
+ * @author Kenneth Wussmann
+ */
 public class ItemStackSyntax implements SyntaxHandler {
 	
 	public static HashMap<String, ItemStack> items = new HashMap<String, ItemStack>();  

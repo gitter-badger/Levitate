@@ -2,6 +2,10 @@ package eu.blackwoods.levitate;
 
 import org.bukkit.command.CommandSender;
 
+/**
+ * Handle a Levitate-Command
+ * @author Kenneth Wussmann
+ */
 public interface CommandHandler {
 	
 	/**

@@ -5,6 +5,10 @@ import java.util.List;
 import eu.blackwoods.levitate.exception.CommandSyntaxException;
 import eu.blackwoods.levitate.exception.SyntaxResponseException;
 
+/**
+ * Handler for syntax
+ * @author Kenneth Wussmann
+ */
 public interface SyntaxHandler {
 	
 	/**

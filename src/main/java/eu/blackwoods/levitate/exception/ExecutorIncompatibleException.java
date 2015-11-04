@@ -1,5 +1,9 @@
 package eu.blackwoods.levitate.exception;
 
+/**
+ * Throws when command-executor is unexpected and incompatible
+ * @author Kenneth Wussmann
+ */
 public class ExecutorIncompatibleException extends Exception {
 	public ExecutorIncompatibleException() {
 		super();

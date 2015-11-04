@@ -7,10 +7,14 @@ import java.util.HashMap;
 import java.util.List;
 
 import eu.blackwoods.levitate.Message;
-import eu.blackwoods.levitate.SyntaxHandler;
 import eu.blackwoods.levitate.Message.TextMode;
+import eu.blackwoods.levitate.SyntaxHandler;
 import eu.blackwoods.levitate.exception.SyntaxResponseException;
 
+/**
+ * Checks if user-input is an url
+ * @author Kenneth Wussmann
+ */
 public class URLSyntax implements SyntaxHandler {
 
 	@Override

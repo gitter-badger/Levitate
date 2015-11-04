@@ -2,7 +2,10 @@ package eu.blackwoods.levitate;
 
 import org.bukkit.command.CommandSender;
 
-
+/**
+ * Check if sender has the given permission
+ * @author Kenneth Wussmann
+ */
 public interface PermissionHandler {
 	
 	/**

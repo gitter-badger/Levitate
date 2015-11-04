@@ -9,6 +9,10 @@ import eu.blackwoods.levitate.SyntaxHandler;
 import eu.blackwoods.levitate.exception.CommandSyntaxException;
 import eu.blackwoods.levitate.exception.SyntaxResponseException;
 
+/**
+ * Checks if user-input is integer.
+ * @author Kenneth Wussmann
+ */
 public class IntegerSyntax implements SyntaxHandler {
 
 	@Override

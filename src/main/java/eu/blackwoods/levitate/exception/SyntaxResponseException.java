@@ -1,5 +1,9 @@
 package eu.blackwoods.levitate.exception;
 
+/**
+ * Throws by SyntaxHandler when user-input is invalid
+ * @author Kenneth Wussmann
+ */
 public class SyntaxResponseException extends Exception {
 	public SyntaxResponseException() {
 		super();

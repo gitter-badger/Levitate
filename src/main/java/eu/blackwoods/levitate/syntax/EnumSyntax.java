@@ -12,6 +12,10 @@ import eu.blackwoods.levitate.SyntaxHandler;
 import eu.blackwoods.levitate.exception.CommandSyntaxException;
 import eu.blackwoods.levitate.exception.SyntaxResponseException;
 
+/**
+ * Checks if user-input is a value of entered enum. Case-insensitive
+ * @author Kenneth Wussmann
+ */
 public class EnumSyntax implements SyntaxHandler {
 
 	@Override

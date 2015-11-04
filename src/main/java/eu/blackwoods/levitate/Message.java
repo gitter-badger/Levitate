@@ -8,7 +8,11 @@ import org.bukkit.ChatColor;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
 
-
+/**
+ * Holds default messages of Levitate.
+ * Please read <a href="https://github.com/KennethWussmann/Levitate/wiki/5.-Modify-messages">this</a> to learn how to modify them the right way.
+ * @author Kenneth Wussmann
+ */
 public enum Message {
 	NO_PERMISSION("You don't have permission!"),
 	ONLY_INGAME("This command is for ingame players!"),
@@ -63,10 +67,20 @@ public enum Message {
 	private static YamlConfiguration config;
 	private String message;
 	
+	/**
+	 * Holds default messages of Levitate.
+	 * Please read <a href="https://github.com/KennethWussmann/Levitate/wiki/5.-Modify-messages">this</a> to learn how to modify them the right way.
+	 * @param message Message
+	 */
 	Message(String message) {
 		this.message = message;
 	}
 	
+	/**
+	 * Get a Levitate-Message 
+	 * @param mode RAW = Unmodified message <br />PLAIN = Strip all colors <br />COLOR = Get colored String and also translate alternate ColorCodes 
+	 * @return
+	 */
 	public String get(TextMode mode) {
 		String raw = message;
 		if(config != null) {
@@ -81,6 +95,12 @@ public enum Message {
 		return raw;
 	}
 	
+	/**
+	 * Get a Levitate-Message and replaces variables 
+	 * @param mode RAW = Unmodified message <br />PLAIN = Strip all colors <br />COLOR = Get colored String and also translate alternate ColorCodes 
+	 * @param replaces HashMap<String, String> with replaces to allow dynamic messages
+	 * @return
+	 */
 	public String get(TextMode mode, HashMap<String, String> replaces) {
 		String message = get(mode);
 		for(String key : replaces.keySet()) 
@@ -106,6 +126,14 @@ public enum Message {
 		}
 	}
 
+	/**
+	 * TextMode for Levitate-Messages.<br /><br />
+	 * 
+	 * RAW = Unmodified message<br />
+	 * PLAIN = Strip all colors<br />
+	 * COLOR = Get colored String and also translate alternate ColorCodes 
+	 * @author Kenneth Wussmann
+	 */
 	public enum TextMode {
 		RAW, PLAIN, COLOR
 	}

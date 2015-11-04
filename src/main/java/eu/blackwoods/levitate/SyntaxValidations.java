@@ -26,12 +26,17 @@ import eu.blackwoods.levitate.syntax.URLSyntax;
 import eu.blackwoods.levitate.syntax.WildcardSyntax;
 import eu.blackwoods.levitate.syntax.WorldSyntax;
 
+/**
+ * Handles SyntaxHandler's
+ * @author Kenneth Wussmann
+ */
 public class SyntaxValidations {
 	
 	private static HashMap<String, SyntaxHandler> syntaxes = new HashMap<String, SyntaxHandler>();
 	
 	/**
 	 * Register default syntaxes to create your command
+	 * @param plugin Instance of JavaPlugin
 	 */
 	public static void registerDefaultSyntax(JavaPlugin plugin) {
 		registerSyntax("boolean", new BooleanSyntax());
@@ -61,6 +66,12 @@ public class SyntaxValidations {
 		syntaxes.put(method, handler);
 	}
 	
+	/**
+	 * Get matches of RegEx
+	 * @param p RegEx
+	 * @param input 
+	 * @return
+	 */
 	public static Iterable<MatchResult> allMatches(final Pattern p, final CharSequence input) {
 		return new Iterable<MatchResult>() {
 			public Iterator<MatchResult> iterator() {
@@ -91,13 +102,22 @@ public class SyntaxValidations {
 			}
 		};
 	}
-		
+	
+	/**
+	 * Check if SyntaxHandler exists for <i>method</i>
+	 * @param method Argument in Levitate-Syntax
+	 * @return
+	 */
 	public static boolean existHandler(String method) {
 		for(String m : syntaxes.keySet()) 
 			if(m.equalsIgnoreCase(method)) return true;
 		return false;
 	}
 	
+	/**
+	 * Get syntaxes 
+	 * @return
+	 */
 	public static HashMap<String, SyntaxHandler> getSyntaxes() {
 		return syntaxes;
 	}
