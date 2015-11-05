@@ -42,7 +42,7 @@ You can get the lastest Levitate-Artifact at:
 * [Jenkins Java-7](http://ci.ketrwu.de/job/Levitate-Java-7/lastSuccessfulBuild/)
 
 #JavaDoc
-You can find the lastest JavaDocs [here](http://jd.ketrwu.de/levitate/1.4.1/).
+You can find the lastest JavaDocs [here](http://ci.ketrwu.de/job/Levitate-Java-8/javadoc/).
 
 #Planned features
 * Let me know your ideas :smile:
